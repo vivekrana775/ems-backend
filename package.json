@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "core-backend",
   "version": "1.0.0",
-  "description": "Production-ready backend for employee management platform",
+  "description": "core-backend",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
+    "@types/compression": "^1.8.1",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",

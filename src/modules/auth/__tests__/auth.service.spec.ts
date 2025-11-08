@@ -1,6 +1,6 @@
 import { AppError } from '@core/errors';
 import { EmploymentStatus, Role } from '@prisma/client';
-import * as utils from '@utils';
+import * as utils from '../../../utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 

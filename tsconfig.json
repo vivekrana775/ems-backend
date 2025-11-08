@@ -18,12 +18,12 @@
     "outDir": "dist",
     "baseUrl": "./src",
     "paths": {
-      "@config": ["config/index"],
       "@config/*": ["config/*"],
       "@core/*": ["core/*"],
       "@modules/*": ["modules/*"],
       "@middlewares/*": ["middlewares/*"],
       "@routes/*": ["routes/*"],
+      "@utils": ["utils/index"],
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
       "@lib/*": ["lib/*"]

@@ -1,4 +1,4 @@
-import { env, logger } from '@config';
+import { env, logger } from '@config/index';
 import { errorHandler } from '@middlewares/error-handler';
 import { notFoundHandler } from '@middlewares/not-found';
 import { registerRoutes } from '@routes/index';
