@@ -1,5 +1,5 @@
 
-import { env } from '@config';
+import { env } from '@config/index';
 import { AppError } from '@core/errors';
 import { EmploymentStatus, Role, type User } from '@prisma/client';
 import {
@@ -10,7 +10,7 @@ import {
   signAccessToken,
   signRefreshToken,
   verifyRefreshToken
-} from '@utils';
+} from '@utils/index';
 import ms from 'ms';
 
 import { AuthRepository } from './repository';
@@ -61,7 +61,9 @@ export type AuthUser = {
   status: EmploymentStatus | null;
 };
 
-const refreshTokenTtlMs = ms(env.JWT_REFRESH_EXPIRES_IN);
+const refreshExpireTime:any = env.JWT_REFRESH_EXPIRES_IN
+
+const refreshTokenTtlMs = ms(refreshExpireTime)
 
 if (typeof refreshTokenTtlMs !== 'number') {
   throw new Error('Invalid JWT_REFRESH_EXPIRES_IN configuration');
@@ -163,8 +165,8 @@ export class AuthService {
     await this.repository.revokeRefreshTokensByUser(userId);
   }
 
-  private async generateTokens(user: User & { roles: { role: Role }[] }) {
-    const roles = user.roles.map((role) => role.role);
+  private async generateTokens(user: User & { roles: { role: Role }[] }, ipAddress: any) {
+    const roles = user.roles.map((role:any) => role.role);
     const tokenId = generateId();
 
     const accessToken = signAccessToken({

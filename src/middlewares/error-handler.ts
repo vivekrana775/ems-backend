@@ -1,4 +1,4 @@
-import { logger } from '@config';
+import { logger } from '@config/index';
 import { AppError } from '@core/errors';
 import { createErrorResponse } from '@core/http/response';
 import type { NextFunction, Request, Response } from 'express';

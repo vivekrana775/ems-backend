@@ -1,4 +1,4 @@
-import { env, logger } from '@config';
+import { env, logger } from '@config/index';
 import { PrismaClient } from '@prisma/client';
 
 declare global {
@@ -20,7 +20,7 @@ if (!env.isProduction) {
 prisma
   .$connect()
   .then(() => logger.info('Prisma connected to database'))
-  .catch((error) => {
+  .catch((error:any) => {
     logger.error({ err: error }, 'Failed to connect Prisma');
     process.exit(1);
   });

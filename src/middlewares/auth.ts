@@ -23,7 +23,7 @@ export const authenticate = (req: Request, _res: Response, next: NextFunction) =
 
   try {
     const payload = verifyAccessToken(token);
-    req.user = { id: payload.sub, roles: payload.roles || [] , tokenPayload: payload };
+    req.user = { id: payload.sub, roles: payload.roles as any, tokenPayload: payload };
     next();
   } catch {
     throw AppError.unauthorized('Invalid or expired token');

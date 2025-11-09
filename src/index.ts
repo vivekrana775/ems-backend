@@ -1,5 +1,8 @@
-import { env, logger, } from '@config/index';
+import 'module-alias/register';
+import { env, logger } from '@config/index';
 import { app } from './app';
+
+console.log("PORT",env.PORT)
 
 const server = app.listen(env.PORT, () => {
   logger.info({ port: env.PORT, env: env.NODE_ENV }, 'Server started');

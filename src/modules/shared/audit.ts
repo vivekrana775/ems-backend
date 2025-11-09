@@ -5,7 +5,7 @@ type AuditLogInput = {
   action: string;
   entity?: string;
   entityId?: string;
-  metadata?: Record<string, unknown>;
+  metadata?: any;
 };
 
 export const createAuditLog = (input: AuditLogInput) => {

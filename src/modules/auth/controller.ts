@@ -1,5 +1,5 @@
 
-import { env } from '@config';
+import { env } from '@config/index';
 import { AppError } from '@core/errors';
 import { createSuccessResponse } from '@core/http/response';
 import { Role } from '@prisma/client';

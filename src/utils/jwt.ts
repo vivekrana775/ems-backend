@@ -1,4 +1,4 @@
-import { env } from '@config';
+import { env } from '@config/index';
 import jwt, { JwtPayload, SignOptions } from 'jsonwebtoken';
 
 export type TokenPayload = JwtPayload & {
@@ -8,18 +8,23 @@ export type TokenPayload = JwtPayload & {
   tokenId?: string;
 };
 
-export const signAccessToken = (payload: TokenPayload, options: SignOptions = {}) => {
+export const signAccessToken = (
+  payload: TokenPayload,
+  options: SignOptions = {}
+) => {
+  //@ts-ignore
   return jwt.sign(
     { ...payload, tokenId: undefined },
-    env.JWT_ACCESS_SECRET,
+    env.JWT_ACCESS_SECRET as any,
     {
-    expiresIn: env.JWT_ACCESS_EXPIRES_IN,
-    ...options
+      expiresIn: env.JWT_ACCESS_EXPIRES_IN,
+      ...options,
     }
   );
 };
 
 export const signRefreshToken = (payload: TokenPayload, options: SignOptions = {}) => {
+    //@ts-ignore
   return jwt.sign(payload, env.JWT_REFRESH_SECRET, {
     expiresIn: env.JWT_REFRESH_EXPIRES_IN,
     ...options

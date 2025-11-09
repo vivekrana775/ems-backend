@@ -1,5 +1,5 @@
 
-import { env, logger } from '@config';
+import { env, logger } from '@config/index';
 import { prisma } from '@lib/prisma';
 import { EmploymentStatus, Role } from '@prisma/client';
 import { hashPassword } from '@utils/password';

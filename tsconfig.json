@@ -23,7 +23,6 @@
       "@modules/*": ["modules/*"],
       "@middlewares/*": ["middlewares/*"],
       "@routes/*": ["routes/*"],
-      "@utils": ["utils/index"],
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
       "@lib/*": ["lib/*"]

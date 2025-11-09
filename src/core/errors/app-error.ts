@@ -5,6 +5,7 @@ export type AppErrorParams = {
   details?: unknown;
   cause?: Error;
   isOperational?: boolean;
+  
 };
 
 export class AppError extends Error {
@@ -15,6 +16,7 @@ export class AppError extends Error {
   public readonly details?: unknown;
 
   public readonly isOperational: boolean;
+  cause: Error | undefined;
 
   constructor({
     message,

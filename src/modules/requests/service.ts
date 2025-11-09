@@ -58,7 +58,7 @@ const serializeRequest = (request: RequestWithRelations) => ({
 const isValidTransition = (current: RequestStatus, next: RequestStatus) => {
   if (current === next) return true;
   if (current === RequestStatus.PENDING) {
-    return [RequestStatus.APPROVED, RequestStatus.REJECTED, RequestStatus.CANCELLED].includes(next);
+    return [RequestStatus.APPROVED, RequestStatus.REJECTED, RequestStatus.PENDING, RequestStatus.CANCELLED].includes(next);
   }
   if (current === RequestStatus.APPROVED) {
     return next === RequestStatus.CANCELLED;
