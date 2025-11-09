@@ -21,15 +21,15 @@
     "seed": "cross-env NODE_ENV=development tsx --tsconfig tsconfig.json src/modules/shared/seed.ts",
     "prepare": "husky"
   },
-    "_moduleAliases": {
-    "@config": "src/config",
-    "@core": "src/core",
-    "@modules": "src/modules",
-    "@middlewares": "src/middlewares",
-    "@routes": "src/routes",
-    "@utils": "src/utils",
-    "@types": "src/types",
-    "@lib": "src/lib"
+  "_moduleAliases": {
+    "@config": "dist/config",
+    "@core": "dist/core",
+    "@modules": "dist/modules",
+    "@middlewares": "dist/middlewares",
+    "@routes": "dist/routes",
+    "@utils": "dist/utils",
+    "@types": "dist/types",
+    "@lib": "dist/lib"
   },
   "keywords": [],
   "author": "",
