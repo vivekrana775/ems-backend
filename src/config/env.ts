@@ -17,7 +17,7 @@ const envSchema = z.object({
   RATE_LIMIT_MAX: z.coerce.number().default(100),
   CORS_ORIGIN: z.string().optional(),
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace']).default('info'),
-  SEED_ADMIN_EMAIL: z.string().email().optional(),
+  SEED_ADMIN_EMAIL: z.email().optional(),
   SEED_ADMIN_PASSWORD: z.string().optional()
 });
 

@@ -8,6 +8,10 @@ export type TokenPayload = JwtPayload & {
   tokenId?: string;
 };
 
+//JWT has three main methods 
+// sign -> sign the token (Create the token)
+// verify -> verify that token is created by this backend
+// defcode -> decode the token
 export const signAccessToken = (
   payload: TokenPayload,
   options: SignOptions = {}

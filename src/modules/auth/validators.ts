@@ -16,7 +16,7 @@ const employeePayload = z
 
 export const signupSchema = {
   body: z.object({
-    email: z.string().email(),
+    email: z.email(),
     password: z.string().min(8),
     firstName: z.string().min(1),
     lastName: z.string().min(1),
@@ -27,7 +27,7 @@ export const signupSchema = {
 
 export const loginSchema = {
   body: z.object({
-    email: z.string().email(),
+    email: z.email(),
     password: z.string().min(8)
   })
 };
